@@ -1,0 +1,13 @@
+# 构建产物
+build/
+*.apk
+
+# 签名密钥（安全起见不提交）
+tools/debug.keystore
+
+# 临时文件
+*.class
+*.png
+
+# D8 编译器（15MB，构建时自动下载，见 README）
+tools/r8.jar
