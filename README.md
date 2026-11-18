@@ -116,7 +116,12 @@ http://file.example.com:8088/d      ← 域名（好记，无方括号）
 
 ### 模式一 DDNS 域名
 
-发送方可填 DDNS 域名，地址码用 `域名:端口` 代替裸 IP。接收方地址码输入框支持域名/IPv4/IPv6方括号/带协议前缀/带路径等所有格式（见下表）。
+发送方可填 DDNS 域名，地址码用 `域名:端口` 代替裸 IP。
+
+### 接收路径选择
+
+接收文件默认保存到 `Download`，界面上点"切换"按钮可循环选择常用目录：
+`Download → Download/FlashLink → Documents → Pictures → Movies → DCIM/Camera`
 
 | 输入格式 | 结果 |
 |---------|------|
