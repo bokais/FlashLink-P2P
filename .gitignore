@@ -1,6 +1,9 @@
 # 构建产物
 build/
+
+# APK：允许提交成品 APK 供直接下载，忽略其它
 *.apk
+!FlashLink-P2P.apk
 
 # 签名密钥（安全起见不提交）
 tools/debug.keystore

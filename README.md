@@ -3,6 +3,17 @@
 **仅保留你选的两个方案：B1（UDP打洞 P2P）+ B4（IPv6直连）**
 其他方案（云托管/热点/局域网/蓝牙）已全部删除。
 
+## 下载
+
+| 方式 | 链接 |
+|------|------|
+| **直接下载 APK（推荐）** | [FlashLink-P2P.apk](https://github.com/bokais/FlashLink-P2P/releases/latest/download/FlashLink-P2P.apk) |
+| 仓库内 APK | [raw/FlashLink-P2P.apk](https://github.com/bokais/FlashLink-P2P/raw/main/FlashLink-P2P.apk) |
+| 所有版本 | [Releases 页面](https://github.com/bokais/FlashLink-P2P/releases) |
+
+- 要求：Android 6.0+（API 23+），大小约 29 KB，下载即装，无额外依赖
+- 想自己编译？见下方[构建](#构建)章节
+
 ## 核心特点
 
 - **文件永远不经任何服务器**，P2P 直连
