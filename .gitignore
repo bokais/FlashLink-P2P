@@ -1,0 +1,16 @@
+# 构建产物
+build/
+
+# APK：允许提交成品 APK 供直接下载，忽略其它
+*.apk
+!FlashLink-P2P.apk
+
+# 签名密钥（安全起见不提交）
+tools/debug.keystore
+
+# 临时文件
+*.class
+*.png
+
+# D8 编译器（15MB，构建时自动下载，见 README）
+tools/r8.jar
