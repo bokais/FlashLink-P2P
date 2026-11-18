@@ -41,7 +41,9 @@ public class MainActivity extends Activity {
     private TextView b1LocalCode;
     private EditText b1DomainInput;
     private EditText b1PeerCode;
-    private EditText b1SaveDir;
+    private TextView b1SaveDir;
+    private String[] saveDirOptions = {"Download", "Download/FlashLink", "Documents", "Pictures", "Movies", "DCIM/Camera"};
+    private int saveDirIndex = 0;
     private TextView b1Status;
     private TextView b1Progress;
 
@@ -147,10 +149,26 @@ public class MainActivity extends Activity {
         b1.addView(M3.body(this, "② 填入对方地址码，一方点接收待命，另一方点发送"));
         b1PeerCode = M3.textField(this, "对方地址码  例如 61.242.130.173:32667");
         b1.addView(b1PeerCode);
+b1.addView(M3.body(this, "接收文件保存位置（默认 Download，点击切换）："));
+        LinearLayout dirRow = new LinearLayout(this);
+        dirRow.setOrientation(LinearLayout.HORIZONTAL);
+        dirRow.setGravity(android.view.Gravity.CENTER_VERTICAL);
+        b1SaveDir = M3.body(this, saveDirOptions[saveDirIndex]);
+        b1SaveDir.setTextColor(M3.PRIMARY);
+        b1SaveDir.setTextSize(15);
+        b1SaveDir.setLayoutParams(new LinearLayout.LayoutParams(0,
+                LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
+        dirRow.addView(b1SaveDir);
+        Button switchDir = M3.outlinedButton(this, "切换");
+        switchDir.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                saveDirIndex = (saveDirIndex + 1) % saveDirOptions.length;
+                b1SaveDir.setText(saveDirOptions[saveDirIndex]);
+            }
+        });
+        dirRow.addView(switchDir);
+        b1.addView(dirRow);
         b1.addView(M3.space(this, 8));
-        b1.addView(M3.body(this, "接收文件保存路径（留空=Download/FlashLink）"));
-        b1SaveDir = M3.textField(this, "例如 /sdcard/Download/我的文件");
-        b1.addView(b1SaveDir);
         b1.addView(M3.space(this, 8));
         LinearLayout b1row = new LinearLayout(this);
         b1row.setOrientation(LinearLayout.HORIZONTAL);
@@ -368,13 +386,8 @@ public class MainActivity extends Activity {
             @Override public void run() {
                 try {
                     ensureP2pSocket();
-                    String custom = b1SaveDir.getText().toString().trim();
-                    File dir;
-                    if (custom.isEmpty()) {
-                        dir = new File(Environment.getExternalStorageDirectory(), "Download/FlashLink");
-                    } else {
-                        dir = new File(custom);
-                    }
+                    String selected = saveDirOptions[saveDirIndex];
+                    File dir = new File(Environment.getExternalStorageDirectory(), selected);
                     if (!dir.exists()) dir.mkdirs();
                     UdpP2P.receive(p2pSocket, dir, p2pCb);
                 } catch (final Exception e) {

@@ -13,19 +13,19 @@ import android.widget.TextView;
 
 /** Material 3 深色主题组件（纯Java，零依赖） */
 final class M3 {
-    // M3 深色配色
-    static final int PRIMARY = Color.parseColor("#D0BCFF");
-    static final int ON_PRIMARY = Color.parseColor("#381E72");
-    static final int PRIMARY_CONTAINER = Color.parseColor("#4F378B");
-    static final int ON_PRIMARY_CONTAINER = Color.parseColor("#EADDFF");
-    static final int SURFACE = Color.parseColor("#141218");
-    static final int SURFACE_VARIANT = Color.parseColor("#302D38");
+    // M3 深灰配色（中性灰按钮）
+    static final int PRIMARY = Color.parseColor("#A8A8B0");
+    static final int ON_PRIMARY = Color.parseColor("#1A1A1E");
+    static final int PRIMARY_CONTAINER = Color.parseColor("#3A3A42");
+    static final int ON_PRIMARY_CONTAINER = Color.parseColor("#E0E0E4");
+    static final int SURFACE = Color.parseColor("#2A2A2E");
+    static final int SURFACE_VARIANT = Color.parseColor("#3A3A40");
     static final int ON_SURFACE = Color.parseColor("#E6E1E5");
     static final int ON_SURFACE_VARIANT = Color.parseColor("#CAC4D0");
-    static final int OUTLINE = Color.parseColor("#938F99");
+    static final int OUTLINE = Color.parseColor("#8A8A92");
     static final int ERROR = Color.parseColor("#F2B8B5");
     static final int ERROR_CONTAINER = Color.parseColor("#4C1D1A");
-    static final int SUCCESS = Color.parseColor("#6DD58C");
+    static final int SUCCESS = Color.parseColor("#8FD4A5");
 
     private M3() {}
 
